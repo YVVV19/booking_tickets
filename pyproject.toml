@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "booking-tickets"
+version = "0.1.0"
+description = ""
+authors = ["YVVV19 <vadimyankovskiy2000@gmail.com>"]
+readme = "README.md"
+packages = [{include = "booking_tickets", from = "src"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+sqlalchemy = "^2.0.36"
+quart = "^0.19.8"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
