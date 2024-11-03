@@ -6,6 +6,9 @@ authors = ["YVVV19 <vadimyankovskiy2000@gmail.com>"]
 readme = "README.md"
 packages = [{include = "booking_tickets", from = "src"}]
 
+[tool.poetry.scripts]
+start = "booking_tickets:run"
+
 [tool.poetry.dependencies]
 python = "^3.11"
 sqlalchemy = "^2.0.36"
