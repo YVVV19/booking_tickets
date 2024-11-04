@@ -4,6 +4,7 @@ from sqlalchemy.orm import Mapped, mapped_column, relationship
 from sqlalchemy import ForeignKey
 from . import Config
 
+
 class Ticket(Config.BASE):
     title:Mapped[str]
     clas:Mapped[int]

@@ -15,3 +15,6 @@ def run():
         raise ex
     finally:
         Config.down()
+
+
+# для запуску {poetry run start}
