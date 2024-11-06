@@ -1,0 +1,12 @@
+{% for ticket in tickets %}
+<div class="card">
+    <h5 class="card-header">Title</h5>
+    <div class="card-body">
+        <h5 class="card-title">from/to</h5>
+        <p class="card-text">clas/date/company/price</p>
+        <a href="#" class="btn btn-primary">booked ticket</a>
+    </div>
+</div>
+{% else %}
+<p>No tickets available</p>
+{% endfor %}
