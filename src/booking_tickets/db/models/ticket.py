@@ -12,5 +12,5 @@ class Ticket(Config.BASE):
     where_end: Mapped[str]
     date:Mapped[str]
     company: Mapped["Company"] = relationship(back_populates="tickets")
-    company_id: Mapped[int] = mapped_column(ForeignKey("company.id"))
+    company_id: Mapped[int] = mapped_column(ForeignKey("companys.id"))
     price: Mapped[Decimal]
