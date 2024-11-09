@@ -1,0 +1,60 @@
+/* Global styles for the body */
+body {
+    background-color: #121212; /* Dark background */
+    color: #e0e0e0; /* Light text color */
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Hero Image Styles */
+.hero-image {
+    position: relative;
+    background: url("/static/images/first.png") no-repeat center center/cover; /* Замість {{ url_for('static', filename='images/first.png') }} використовується прямий шлях */
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    font-size: 2rem;
+}
+
+/* Buttons and Links */
+.btn-info {
+    background-color: #00bcd4; /* Teal color */
+    color: white;
+}
+
+.btn-info:hover {
+    background-color: #0097a7; /* Darker teal */
+}
+
+/* Navbar customization */
+.navbar {
+    background-color: #333333; /* Dark navbar */
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: #e0e0e0; /* Light text for navbar */
+}
+
+.navbar-dark .navbar-nav .nav-link:hover {
+    color: #ff6347; /* Tomato color on hover */
+}
+
+/* Cards, Lists, and Other Elements */
+.card, .list-group-item {
+    background-color: #1e1e1e; /* Dark card and list item background */
+    color: #e0e0e0; /* Light text */
+}
+
+.card:hover, .list-group-item:hover {
+    background-color: #333333; /* Lighter background on hover */
+}
+
+/* Footer styles */
+footer {
+    background-color: #212121; /* Dark footer */
+    color: #bdbdbd; /* Light gray text */
+    padding: 20px;
+    text-align: center;
+}
