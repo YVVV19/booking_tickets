@@ -1,0 +1,15 @@
+{% extends '__base.html' %}
+
+{% block main %}
+    <h2>Available Tickets</h2>
+    <ul class="list-group">
+        {% for ticket in tickets %}
+            <li class="list-group-item">
+                <h5>{{ ticket.title }}</h5>
+                <p>{{ ticket.description }}</p>
+                <a href="{{ url_for('ticket_details', index=ticket.id) }}" class="btn btn-info">View Details</a>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}
+

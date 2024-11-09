@@ -12,7 +12,7 @@ async def create_ticket():
                 company=Company(name="ddek"),
             )
             session.add(ticket)
-    return redirect(url_for("__base.html"))
+    return redirect(url_for("tickets"))
 
 
 @app.get("/ticket_details/<int:index>")
@@ -21,7 +21,7 @@ async def ticket_details(index: int):
         ticket = session.query(Ticket).get(index)
         if not ticket:
             raise NotImplementedError("Ticket not found")
-        return await render_template()
+        return await render_template("ticket.html", ticket=ticket)
 
 
 @app.get("/tickets")
@@ -31,10 +31,5 @@ async def tickets():
         tickets = session.scalars(smth).all()
         return await render_template(
             "index.html",
-            tickets=[
-                Ticket(
-                    
-                )
-                for x in tickets
-            ],
+            tickets=tickets,
         )
