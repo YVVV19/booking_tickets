@@ -7,3 +7,4 @@ async def companies():
     with Config.SESSION.begin() as session:
         smth=select(Company)
         companies = session.scalars(smth).all()
+        return companies

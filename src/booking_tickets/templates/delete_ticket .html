@@ -1,0 +1,4 @@
+<form method="post" action="{{ url_for('delete_ticket' ) }}" style="display: flex; flex-direction: column; gap: 8px; max-width:400px">
+    <input type="hidden" name="post_id" value="{{index}}">
+    <button type="submit">Delete</button>
+</form>

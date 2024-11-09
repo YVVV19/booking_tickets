@@ -1,0 +1,7 @@
+{% extends '__base.html' %}
+
+{% block main %}
+    {% set iterable = items %}
+    {% include 'ticket.html'   %}
+    {% include 'create_ticket.html'   %}
+{% endblock %}

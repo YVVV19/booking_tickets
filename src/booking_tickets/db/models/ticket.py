@@ -7,10 +7,6 @@ from . import Config
 
 class Ticket(Config.BASE):
     title:Mapped[str]
-    clas:Mapped[int]
-    where_start: Mapped[str]
-    where_end: Mapped[str]
-    date:Mapped[str]
+    content:Mapped[str]
     company: Mapped["Company"] = relationship(back_populates="tickets")
     company_id: Mapped[int] = mapped_column(ForeignKey("companys.id"))
-    price: Mapped[Decimal]
