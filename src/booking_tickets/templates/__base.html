@@ -15,60 +15,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Playfair+Display&display=swap" rel="stylesheet">
 </head>
 <body class="bg-dark text-white">
+    {% block nav %}
+        {% include '__navbar.html'   %}
+    {% endblock %}
 
-    <!-- Navbar with Offcanvas -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">Explore Your Next Adventure</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-                <div class="offcanvas-header">
-                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">All Features</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                </div>
-                <div class="offcanvas-body">
-                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                        <li class="nav-item">
-                            <a class="nav-link active" href="#">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Log in/Sign in</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Client</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Check ticket</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Company</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Create ticket</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Edit ticket</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Delete ticket</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Poll</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Contact information</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Main Content -->
     <div class="container mt-5 pt-5">
-        {% block main %}{% endblock %}
+        {% block main %}
+
+        {% endblock %}
     </div>
 
     <!-- Footer -->
