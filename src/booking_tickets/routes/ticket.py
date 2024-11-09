@@ -3,25 +3,26 @@ from quart import render_template, request, redirect, url_for
 from . import Company, Ticket, app, Config
 
 
-@app.get("/company")
+@app.get("/tickets")
 async def tickets():
     with Config.SESSION.begin() as session:
         smth = select(Ticket)
         tickets = session.scalars(smth).all()
         return await render_template(
             "index.html",
-            tickets=[
-                Ticket(
-                    title=x.title,
-                    content=x.content,
-                    company=x.company,
-                )
-                for x in tickets
-            ],
+            tickets=tickets,
+            # tickets=[
+            #     Ticket(
+            #         title=x.title,
+            #         content=x.content,
+            #         company=x.company,
+            #     )
+            #     for x in tickets
+            # ],
         )
 
 
-@app.post("/company")
+@app.post("/tickets")
 async def create_ticket():
     form = await request.form
     if form:
@@ -40,7 +41,7 @@ async def ticket_details(index: int):
         ticket = session.query(Ticket).get(index)
         if not ticket:
             raise NotImplementedError("Ticket not found")
-        return await render_template("create_ticket.html")
+        return await render_template("ticket.html", ticket=ticket)
 
 @app.get("/tickets/<int:index>/delete")
 async def delete_tickets(index: int):

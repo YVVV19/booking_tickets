@@ -15,10 +15,10 @@
 
 <main>
     {% for ticket in tickets %}
-    {{loop.index}}
+    {{ticket.id}}
     <div class="card">
         <article>
-            <h2><a href="{{url_for('ticket_details',index=loop.index)}}">{{ ticket.title }}</a></h2>
+            <h2><a href="{{url_for('ticket_details',index=ticket.id)}}">{{ ticket.title }}</a></h2>
             <p class="card-text">{{ticket.content|safe}}</p>
             <!-- <p class="card-text">{{ticket.price|safe}}</p> -->
             <a href="{{url_for('delete_tickets', index=ticket.id)}}" class="btn btn-primary">booked ticket</a>
