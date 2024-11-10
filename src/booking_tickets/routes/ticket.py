@@ -35,8 +35,8 @@ async def ticket_details(index: int):
             raise NotImplementedError("Ticket not found")
         return await render_template("ticket.html", ticket=ticket)
 
-@app.get("/tickets/<int:index>/delete")
-async def delete_tickets(index: int):
+@app.get("/tickets/delete/<int:index>")
+async def delete_ticket_page(index: int):
     return await render_template("delete_ticket.html", index=index)
 
 
