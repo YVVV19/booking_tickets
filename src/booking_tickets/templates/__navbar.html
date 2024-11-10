@@ -15,7 +15,7 @@
             <div class="offcanvas-body">
                 <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        <a class="nav-link active" aria-current="page" href="{{url_for('home')}}">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Log in/Sign in</a>
@@ -27,14 +27,7 @@
                             Client
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="sdhcbtd">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li>
-                                <hr class="dropdown-divider" />
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="#">Something else here</a>
-                            </li>
+                            <li><a class="dropdown-item" href="#">book</a></li>
                         </ul>
                     </li>
                     <!-- for company -->
@@ -44,13 +37,12 @@
                             Company
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li><a class="dropdown-item" href="{{url_for('create_ticket')}}">Create</a></li>
                             <li>
                                 <hr class="dropdown-divider" />
                             </li>
                             <li>
-                                <a class="dropdown-item" href="#">Something else here</a>
+                                <a class="dropdown-item" href="{{url_for('delete_ticket')}}">Delete</a>
                             </li>
                         </ul>
                     </li>
@@ -58,7 +50,7 @@
                         <a class="nav-link" href="#">Poll</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Contact information</a>
+                        <a class="nav-link" href="{{url_for('contact_info')}}">Contact information</a>
                     </li>
                 </ul>
             </div>

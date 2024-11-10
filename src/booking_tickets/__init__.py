@@ -10,7 +10,7 @@ from . import routes
 def run():
     try:
         Config.up()
-        app.run()
+        app.run(debug=True)
     except Exception as ex:
         raise ex
     finally:
