@@ -1,5 +1,5 @@
-from quart import render_template
-from . import app, Config
+from quart import render_template, request, redirect, url_for
+from . import app, Config, Poll
 
 
 poll_data = {
@@ -10,3 +10,14 @@ poll_data = {
 @app.get("/poll")
 async def poll():
     return await render_template("poll.html", data=poll_data)
+
+@app.post("/poll")
+async def create_poll():
+    form = await request.form
+    if form:
+        with Config.SESSION.begin() as session:
+            polls = [Poll(
+                **form,
+            )]
+            session.add_all(polls)
+    return redirect(url_for("poll"))

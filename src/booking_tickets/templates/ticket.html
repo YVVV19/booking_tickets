@@ -1,6 +1,5 @@
 <main>
     {% for ticket in tickets %}
-    {{ticket.id}}
     <div class="card text-bg-light mb-3" style="max-width: 18rem;">
         <article>
             <h2><a href="{{url_for('ticket_details',index=ticket.id)}}">{{ ticket.title }}</a></h2>

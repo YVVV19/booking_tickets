@@ -11,14 +11,6 @@ async def tickets():
         return await render_template(
             "index.html",
             tickets=tickets,
-            # tickets=[
-            #     Ticket(
-            #         title=x.title,
-            #         content=x.content,
-            #         company=x.company,
-            #     )
-            #     for x in tickets
-            # ],
         )
 
 
