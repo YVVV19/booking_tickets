@@ -1,60 +1,157 @@
-/* Global styles for the body */
 body {
-    background-color: #121212; /* Dark background */
-    color: #e0e0e0; /* Light text color */
+    background-color: #121212;
+    color: #e0e0e0;
     font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
-/* Hero Image Styles */
 .hero-image {
     position: relative;
-    background: url("/static/images/first.png") no-repeat center center/cover; /* Замість {{ url_for('static', filename='images/first.png') }} використовується прямий шлях */
+    background: url("/static/images/first.png") no-repeat center center;
+    background-size: cover;
+    width: 100%;
     height: 50vh;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
     color: #fff;
-    font-size: 2rem;
+    font-size: 2.5rem;
 }
 
-/* Buttons and Links */
+.hero-text {
+    text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.7);
+}
+
+.home-main {
+    padding: 20px;
+    text-align: center;
+}
+
+.home-main h1 {
+    font-size: 3rem;
+    color: #ff6347;
+    margin-bottom: 20px;
+}
+
+.home-main p {
+    font-size: 1.5rem;
+    color: #ffa500;
+}
+
 .btn-info {
-    background-color: #00bcd4; /* Teal color */
+    background-color: #00bcd4;
     color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
 }
 
 .btn-info:hover {
-    background-color: #0097a7; /* Darker teal */
+    background-color: #0097a7;
 }
 
-/* Navbar customization */
 .navbar {
-    background-color: #333333; /* Dark navbar */
+    background-color: #333333;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
 }
 
 .navbar-dark .navbar-nav .nav-link {
-    color: #e0e0e0; /* Light text for navbar */
+    color: #e0e0e0;
 }
 
 .navbar-dark .navbar-nav .nav-link:hover {
-    color: #ff6347; /* Tomato color on hover */
+    color: #ff6347;
 }
 
-/* Cards, Lists, and Other Elements */
+footer {
+    background-color: #212121;
+    color: #bdbdbd;
+    padding: 20px;
+    text-align: center;
+}
+
 .card, .list-group-item {
-    background-color: #1e1e1e; /* Dark card and list item background */
-    color: #e0e0e0; /* Light text */
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+    border: none;
+    margin: 10px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
 }
 
 .card:hover, .list-group-item:hover {
-    background-color: #333333; /* Lighter background on hover */
+    background-color: #333333;
 }
 
-/* Footer styles */
-footer {
-    background-color: #212121; /* Dark footer */
-    color: #bdbdbd; /* Light gray text */
+@media screen and (max-width: 768px) {
+    .hero-image {
+        height: 40vh;
+    }
+
+    .hero-text {
+        font-size: 1.8rem;
+    }
+
+    .home-main h1 {
+        font-size: 2.5rem;
+    }
+
+    .home-main p {
+        font-size: 1.2rem;
+    }
+}
+
+.help-page {
+    max-width: 800px;
+    margin: 0 auto;
     padding: 20px;
+    background-color: #1e1e1e; 
+    color: #e0e0e0; 
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.help-header h1 {
+    font-size: 2.5rem;
+    color: #ff6347; 
+    margin-bottom: 10px;
     text-align: center;
+}
+
+.help-header p {
+    font-size: 1.2rem;
+    color: #ffa500; 
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.contact-section h2 {
+    font-size: 2rem;
+    color: #00bcd4; 
+    margin-bottom: 15px;
+}
+
+.contact-item {
+    margin-bottom: 20px;
+}
+
+.contact-item h3 {
+    font-size: 1.5rem;
+    color: #ffa500; 
+}
+
+.contact-item p a {
+    color: #00bcd4; 
+    text-decoration: none;
+}
+
+.contact-item p a:hover {
+    text-decoration: underline;
 }

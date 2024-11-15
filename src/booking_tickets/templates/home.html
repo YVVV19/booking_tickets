@@ -1,5 +1,16 @@
 {% extends '__base.html' %}
 
 {% block main %}
-    <h1>somthing about website</h1>
+<div class="hero-container">
+    <img src="{{ url_for('static', filename='images/first.png') }}" alt="Travel and Adventure" class="hero-image">
+</div>
+
+<div class="text-section">
+    <h1 class="highlight-yellow">Welcome to Your Travel Hub</h1>
+    <p>
+        <span class="highlight-red">Explore beautiful destinations</span>, 
+        <span class="highlight-yellow">book tickets with ease</span>, 
+        and <span class="highlight-green">make your travel dreams come true.</span>
+    </p>
+</div>
 {% endblock %}
