@@ -24,7 +24,7 @@
                             Client
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">book</a></li>
+                            <li><a class="dropdown-item" href="{{url_for('book_ticket')}}">Book</a></li>
                         </ul>
                     </li>
                     <!-- for company -->
@@ -35,12 +35,12 @@
                         </a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="{{url_for('create_ticket')}}">Create</a></li>
-                            <li>
+                            <!-- <li>
                                 <hr class="dropdown-divider" />
-                            </li>
-                            <li>
+                            </li> -->
+                            <!-- <li>
                                 <a class="dropdown-item" href="{{url_for('delete_ticket')}}">Delete</a>
-                            </li>
+                            </li> -->
                         </ul>
                     </li>
                     <li class="nav-item">

@@ -34,6 +34,22 @@ async def ticket_details(index: int):
         if not ticket:
             raise NotImplementedError("Ticket not found")
         return await render_template("ticket.html", ticket=ticket)
+    
+
+@app.get("/ticket/book/<int:index>/details")
+async def book_ticket_page(index: int):
+        return await render_template("book_ticket.html", index=index)
+
+
+@app.post("/tickets/book")
+async def book_ticket():
+    form = await request.form
+    ticket_id = form.get("ticket_id")
+    if ticket_id:
+        with Config.SESSION.begin() as session:
+            session.execute(delete(Ticket).where(Ticket.id == ticket_id))
+    return redirect(url_for(tickets.__name__))
+
 
 @app.get("/tickets/delete/<int:index>")
 async def delete_ticket_page(index: int):
