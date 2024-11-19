@@ -4,7 +4,7 @@
         <article>
         <h2><a href="{{url_for('ticket_details',index=ticket.id)}}">{{ ticket.title }}</a></h2>
         <p class="card-text">{{ticket.content|safe}}</p>
-        <a href="{{url_for('delete_ticket_page', index=ticket.id)}}">delete</a>
+        <a href="{{url_for('delete_ticket_page', index=ticket.id)}}">Book</a>
         </article>
     </div>
     {% else %}

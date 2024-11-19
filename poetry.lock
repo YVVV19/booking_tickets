@@ -70,6 +70,25 @@ async = ["asgiref (>=3.2)"]
 dotenv = ["python-dotenv"]
 
 [[package]]
+name = "flask-wtf"
+version = "1.2.2"
+description = "Form rendering, validation, and CSRF protection for Flask with WTForms."
+optional = false
+python-versions = ">=3.9"
+files = [
+    {file = "flask_wtf-1.2.2-py3-none-any.whl", hash = "sha256:e93160c5c5b6b571cf99300b6e01b72f9a101027cab1579901f8b10c5daf0b70"},
+    {file = "flask_wtf-1.2.2.tar.gz", hash = "sha256:79d2ee1e436cf570bccb7d916533fa18757a2f18c290accffab1b9a0b684666b"},
+]
+
+[package.dependencies]
+flask = "*"
+itsdangerous = "*"
+wtforms = "*"
+
+[package.extras]
+email = ["email-validator"]
+
+[[package]]
 name = "greenlet"
 version = "3.1.1"
 description = "Lightweight in-process concurrent programming"
@@ -497,7 +516,24 @@ files = [
 [package.dependencies]
 h11 = ">=0.9.0,<1"
 
+[[package]]
+name = "wtforms"
+version = "3.2.1"
+description = "Form validation and rendering for Python web development."
+optional = false
+python-versions = ">=3.9"
+files = [
+    {file = "wtforms-3.2.1-py3-none-any.whl", hash = "sha256:583bad77ba1dd7286463f21e11aa3043ca4869d03575921d1a1698d0715e0fd4"},
+    {file = "wtforms-3.2.1.tar.gz", hash = "sha256:df3e6b70f3192e92623128123ec8dca3067df9cfadd43d59681e210cfb8d4682"},
+]
+
+[package.dependencies]
+markupsafe = "*"
+
+[package.extras]
+email = ["email-validator"]
+
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.11"
-content-hash = "ee5bbe21bffeab0e251a4c908d996c3e30fc3621755118fe13ee9bf8adbaf14c"
+content-hash = "c157295cfed7e972b37f28ba98920ff6b7c0dc979df9b7fcc09c62caa52a1a2f"

@@ -2,7 +2,7 @@ from sqlalchemy import select, delete
 from quart import render_template, request, redirect, url_for
 from . import Company, Ticket, app, Config
 
-
+########for company
 @app.get("/tickets")
 async def tickets():
     with Config.SESSION.begin() as session:
@@ -36,20 +36,6 @@ async def ticket_details(index: int):
         return await render_template("ticket.html", ticket=ticket)
     
 
-@app.get("/ticket/book/<int:index>/details")
-async def book_ticket_page(index: int):
-        return await render_template("book_ticket.html", index=index)
-
-
-@app.post("/tickets/book")
-async def book_ticket():
-    form = await request.form
-    ticket_id = form.get("ticket_id")
-    if ticket_id:
-        with Config.SESSION.begin() as session:
-            session.execute(delete(Ticket).where(Ticket.id == ticket_id))
-    return redirect(url_for(tickets.__name__))
-
 
 @app.get("/tickets/delete/<int:index>")
 async def delete_ticket_page(index: int):
@@ -64,3 +50,28 @@ async def delete_ticket():
         with Config.SESSION.begin() as session:
             session.execute(delete(Ticket).where(Ticket.id == ticket_id))
     return redirect(url_for(tickets.__name__))
+
+
+# ########################
+# @app.get("/ticket/book/<int:index>/details")
+# async def book_ticket_details(index: int):
+#     with Config.SESSION.begin() as session:
+#         ticket = session.query(Ticket).get(index)
+#         if not ticket:
+#             raise NotImplementedError("Ticket not found")
+#         return await render_template("ticket_booking.html", ticket=ticket)
+
+# @app.get("/ticket/book/<int:index>")
+# async def book_ticket_page(index: int):
+#         return await render_template("book_ticket.html", index=index)
+
+
+# @app.post("/tickets/book")
+# async def book_ticket():
+#     form = await request.form
+#     ticket_id = form.get("ticket_id")
+#     if ticket_id:
+#         with Config.SESSION.begin() as session:
+#             session.execute(delete(Ticket).where(Ticket.id == ticket_id))
+#     return redirect(url_for(tickets.__name__))
+# ########################################

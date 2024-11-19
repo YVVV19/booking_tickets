@@ -13,6 +13,7 @@ start = "src.booking_tickets:run"
 python = "^3.11"
 sqlalchemy = "^2.0.36"
 quart = "^0.19.8"
+flask-wtf = "^1.2.2"
 
 
 [build-system]
