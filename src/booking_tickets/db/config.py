@@ -8,7 +8,7 @@ class Base(DeclarativeBase, AutoTableNameMixin, AutoPrimaryKeyMixin):
 
 class Config(object):
     BASE=Base
-    ENGINE=create_engine("sqlite:///tickets.sql", echo=True)
+    ENGINE=create_engine("sqlite:///my_db.sql", echo=True)
     SESSION=sessionmaker(ENGINE)
 
 

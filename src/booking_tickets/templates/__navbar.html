@@ -17,6 +17,9 @@
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="{{url_for('home')}}">Home</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="{{url_for('register')}}">Register</a>
+                    </li>
                     <!-- for client -->
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
@@ -24,7 +27,7 @@
                             Client
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="{{url_for('create_ticket')}}">Book</a></li>
+                            <li><a class="dropdown-item" href="{{url_for('user_tickets')}}">Book</a></li>
                         </ul>
                     </li>
                     <!-- for company -->
@@ -34,7 +37,7 @@
                             Company
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="{{url_for('create_ticket')}}">Create</a></li>
+                            <li><a class="dropdown-item" href="{{url_for('comp_create_ticket')}}">Create</a></li>
                             <!-- <li>
                                 <hr class="dropdown-divider" />
                             </li> -->

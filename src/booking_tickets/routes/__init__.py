@@ -1,5 +1,5 @@
 from .. import app, Config
-from ..db import Company, Ticket, Poll
+from ..db import Company, Ticket, Poll, User
 
-from . import company, ticket, home, contact_info, poll
+from . import company, home, contact_info, poll, ticket_company, ticket_user, register
 from . import errors

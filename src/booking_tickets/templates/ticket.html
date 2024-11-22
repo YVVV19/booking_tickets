@@ -2,9 +2,9 @@
     {% for ticket in tickets %}
     <div class="card text-bg-light mb-3" style="max-width: 18rem;">
         <article>
-        <h2><a href="{{url_for('ticket_details',index=ticket.id)}}">{{ ticket.title }}</a></h2>
+        <h2><a href="{{url_for('comp_ticket_details',index=ticket.id)}}">{{ ticket.title }}</a></h2>
         <p class="card-text">{{ticket.content|safe}}</p>
-        <a href="{{url_for('delete_ticket_page', index=ticket.id)}}">Book</a>
+        <a href="{{url_for('delete_ticket_page', index=ticket.id)}}">Delete</a>
         </article>
     </div>
     {% else %}

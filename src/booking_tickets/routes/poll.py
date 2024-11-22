@@ -16,8 +16,8 @@ async def create_poll():
     form = await request.form
     if form:
         with Config.SESSION.begin() as session:
-            polls = [Poll(
+            polls = Poll(
                 **form,
-            )]
-            session.add_all(polls)
+            )
+            session.add(polls)
     return redirect(url_for("poll"))
