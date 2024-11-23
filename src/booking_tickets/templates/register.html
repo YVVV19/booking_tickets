@@ -1,90 +1,43 @@
 {% extends '__base.html' %}
 
 {% block main %}
-<body>
-<style>
-    body {
-        font-family: Arial, sans-serif;
-        background-color: #f4f4f4;
-        margin: 0;
-        padding: 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-    }
-
-    .container {
-        background: white;
-        padding: 20px;
-        border-radius: 8px;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        width: 300px;
-    }
-
-    h1 {
-        text-align: center;
-        font-size: 24px;
-        margin-bottom: 20px;
-    }
-
-    form div {
-        margin-bottom: 15px;
-    }
-
-    label {
-        display: block;
-        font-weight: bold;
-        margin-bottom: 5px;
-    }
-
-    input {
-        width: 100%;
-        padding: 8px;
-        box-sizing: border-box;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-    }
-
-    .error {
-        color: red;
-        font-size: 12px;
-    }
-
-    .submit-btn {
-        background-color: #007BFF;
-        color: white;
-        border: none;
-        padding: 10px;
-        width: 100%;
-        border-radius: 4px;
-        cursor: pointer;
-        font-size: 16px;
-    }
-
-    .submit-btn:hover {
-        background-color: #0056b3;
-    }
-</style>
-    <div class="container">
-        <h1>Register</h1>
-        <form method="POST" style="display: flex; flex-direction: column; gap: 8px; max-width:400px">
-            <div class="form-floating">
-                <textarea class="form-control" name="email" placeholder="Email" 
-                id="email_texarea">{{email}}</textarea>
-                <label for="title_texarea">Email</label>
-            </div>
-            <div class="form-floating">
-                <textarea class="form-control" name="username" placeholder="Username" 
-                id="username_textarea" style="height: 20px">{{username}}</textarea>
-                <label for="content_textarea">Username</label>
-            </div>            <div class="form-floating">
-                <textarea class="form-control" name="password" placeholder="Password" 
-                id="password_textarea" style="height: 20px">{{password}}</textarea>
-                <label for="content_textarea">Password</label>
-            </div>
-            <button type="submit">Submit</button>
-        </form>
-    </div>
-</body>
+<div class="container mt-5">
+    <h1 class="text-center text-success">Register</h1>
+    <form method="POST" class="mt-4">
+        <!-- Email -->
+        <div class="form-floating mb-3">
+            <input 
+                type="email" 
+                class="form-control" 
+                name="email" 
+                id="email_input" 
+                placeholder="Email"
+                value="{{ email }}">
+            <label for="email_input" class="text-success">Email</label>
+        </div>
+        <!-- Username -->
+        <div class="form-floating mb-3">
+            <input 
+                type="text" 
+                class="form-control" 
+                name="username" 
+                id="username_input" 
+                placeholder="Username"
+                value="{{ username }}">
+            <label for="username_input" class="text-success">Username</label>
+        </div>
+        <!-- Password -->
+        <div class="form-floating mb-3">
+            <input 
+                type="password" 
+                class="form-control" 
+                name="password" 
+                id="password_input" 
+                placeholder="Password">
+            <label for="password_input" class="text-success">Password</label>
+        </div>
+        <!-- Submit button -->
+        <button type="submit" class="btn btn-success w-100">Submit</button>
+    </form>
+</div>
 {% endblock %}

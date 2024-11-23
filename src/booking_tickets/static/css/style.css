@@ -1,3 +1,4 @@
+/* Загальні стилі для всього сайту */
 body {
     background-color: #121212;
     color: #e0e0e0;
@@ -6,152 +7,119 @@ body {
     padding: 0;
 }
 
-.hero-image {
-    position: relative;
-    background: url("/static/images/first.png") no-repeat center center;
-    background-size: cover;
-    width: 100%;
-    height: 50vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: #fff;
-    font-size: 2.5rem;
-}
-
-.hero-text {
-    text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.7);
-}
-
-.home-main {
+/* Секція для форми реєстрації */
+.container {
+    background-color: #1e1e1e; /* Темно-сірий фон для форми */
+    color: #e0e0e0; /* Світлий текст */
     padding: 20px;
-    text-align: center;
-}
-
-.home-main h1 {
-    font-size: 3rem;
-    color: #ff6347;
-    margin-bottom: 20px;
-}
-
-.home-main p {
-    font-size: 1.5rem;
-    color: #ffa500;
-}
-
-.btn-info {
-    background-color: #00bcd4;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    font-size: 1rem;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-}
-
-.btn-info:hover {
-    background-color: #0097a7;
-}
-
-.navbar {
-    background-color: #333333;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 10;
-}
-
-.navbar-dark .navbar-nav .nav-link {
-    color: #e0e0e0;
-}
-
-.navbar-dark .navbar-nav .nav-link:hover {
-    color: #ff6347;
-}
-
-footer {
-    background-color: #212121;
-    color: #bdbdbd;
-    padding: 20px;
-    text-align: center;
-}
-
-.card, .list-group-item {
-    background-color: #1e1e1e;
-    color: #e0e0e0;
-    border: none;
-    margin: 10px;
     border-radius: 8px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3); /* Додає тінь */
+    width: 100%;
+    max-width: 400px; /* Обмежує ширину форми */
+    margin: 50px auto; /* Центрує форму */
+    text-align: left;
 }
 
-.card:hover, .list-group-item:hover {
-    background-color: #333333;
-}
-
-@media screen and (max-width: 768px) {
-    .hero-image {
-        height: 40vh;
-    }
-
-    .hero-text {
-        font-size: 1.8rem;
-    }
-
-    .home-main h1 {
-        font-size: 2.5rem;
-    }
-
-    .home-main p {
-        font-size: 1.2rem;
-    }
-}
-
-.help-page {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #1e1e1e; 
-    color: #e0e0e0; 
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-}
-
-.help-header h1 {
-    font-size: 2.5rem;
-    color: #ff6347; 
-    margin-bottom: 10px;
+/* Заголовок форми */
+.container h1 {
+    font-size: 24px;
     text-align: center;
-}
-
-.help-header p {
-    font-size: 1.2rem;
-    color: #ffa500; 
     margin-bottom: 20px;
-    text-align: center;
+    color: #ff6347; /* Яскраво-помаранчевий */
 }
 
-.contact-section h2 {
-    font-size: 2rem;
-    color: #00bcd4; 
+/* Відступи між елементами форми */
+form div {
     margin-bottom: 15px;
 }
 
-.contact-item {
+/* Стиль міток */
+label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #ffa500; /* Помаранчевий для тексту */
+}
+
+/* Поля вводу */
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    color: #e0e0e0; /* Світлий текст */
+    background-color: #2a2a2a; /* Темний фон для полів */
+    border: 1px solid #333333; /* Темний бордер */
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+/* Заборона зміни розміру текстового поля */
+textarea {
+    resize: none;
+}
+
+/* Кнопка відправки */
+.submit-btn {
+    background-color: #00bcd4; /* Блакитна кнопка */
+    color: #fff; /* Білий текст */
+    border: none;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+}
+
+.submit-btn:hover {
+    background-color: #0097a7; /* Темніший відтінок при наведенні */
+}
+
+/* Для відображення помилок */
+.error {
+    color: #ff3333; /* Червоний текст */
+    font-size: 12px;
+}
+
+/* Для мобільних пристроїв */
+@media screen and (max-width: 768px) {
+    .container {
+        margin: 20px auto; /* Менший відступ зверху */
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    input, textarea {
+        font-size: 14px;
+    }
+
+    .submit-btn {
+        font-size: 14px;
+    }
+}
+
+/* Стиль для заголовку */
+h1 {
+    font-size: 2rem;
+    color: #28a745; /* Зелене забарвлення */
     margin-bottom: 20px;
 }
 
-.contact-item h3 {
-    font-size: 1.5rem;
-    color: #ffa500; 
+/* Стиль для міток форми */
+.form-floating label {
+    color: #28a745 !important; /* Яскравий зелений */
 }
 
-.contact-item p a {
-    color: #00bcd4; 
-    text-decoration: none;
+/* Кнопка відправки */
+button.btn-success {
+    background-color: #28a745;
+    border: none;
+    transition: background-color 0.3s;
 }
 
-.contact-item p a:hover {
-    text-decoration: underline;
+button.btn-success:hover {
+    background-color: #218838; /* Трохи темніше при наведенні */
 }
