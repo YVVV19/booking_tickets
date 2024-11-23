@@ -123,3 +123,20 @@ button.btn-success {
 button.btn-success:hover {
     background-color: #218838; /* Трохи темніше при наведенні */
 }
+.hero-image {
+    position: relative;
+    background: url("/static/images/first.png") no-repeat center center;
+    background-size: cover;
+    width: 100%;
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    font-size: 2.5rem;
+}
+
+.hero-text {
+    text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.7);
+}

@@ -16,4 +16,4 @@ async def create_register():
                 **form,
             )]
             session.add_all(register)
-    return redirect(url_for("register"))
+    return redirect(url_for("home"))
